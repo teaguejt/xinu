@@ -48,10 +48,10 @@ queuetab            0x980             binaries/queue.o
 ptnextid            0x4               binaries/ptinit.o
 Ram                 0x19000           binaries/raminit.o
 ipoqueue            0x2c              binaries/ip.o
-memlist             0xc               binaries/initialize.o
+memlist             0x8               binaries/initialize.o
 nametab             0x19a0            binaries/naminit.o
 ptfree              0x4               binaries/ptinit.o
-memtail             0xc               binaries/initialize.o
+memtail             0x8               binaries/initialize.o
 
 Memory Configuration
 
@@ -1307,69 +1307,69 @@ Linker script and memory map
                 0x81016110                clktime
  COMMON         0x81016114      0x200 binaries/evec.o
                 0x81016114                intc_vector
- COMMON         0x81016314     0x1ab0 binaries/initialize.o
+ COMMON         0x81016314     0x1aa8 binaries/initialize.o
                 0x81016314                currpid
                 0x81016318                proctab
                 0x810178f8                prcount
                 0x810178fc                semtab
                 0x81017dac                memlist
-                0x81017db8                memtail
- COMMON         0x81017dc4        0x4 binaries/main.o
-                0x81017dc4                cpudelay
- COMMON         0x81017dc8       0x58 binaries/mark.o
-                0x81017dc8                marks
-                0x81017e18                nmarks
-                0x81017e1c                mkmutex
- COMMON         0x81017e20        0x8 binaries/meminit.o
-                0x81017e20                minheap
-                0x81017e24                maxheap
- COMMON         0x81017e28      0x2d8 binaries/ptinit.o
-                0x81017e28                porttab
-                0x810180f8                ptnextid
-                0x810180fc                ptfree
- COMMON         0x81018100      0x980 binaries/queue.o
-                0x81018100                queuetab
- COMMON         0x81018a80        0x2 binaries/ready.o
-                0x81018a80                readylist
- *fill*         0x81018a82        0x2 
- COMMON         0x81018a84        0x8 binaries/resched.o
-                0x81018a84                Defer
- COMMON         0x81018a8c      0x10c binaries/ttyinit.o
-                0x81018a8c                ttytab
- COMMON         0x81018b98     0x19a4 binaries/naminit.o
-                0x81018b98                nnames
-                0x81018b9c                nametab
- COMMON         0x8101a53c      0x154 binaries/ethinit.o
-                0x8101a53c                eth_a_regs
-                0x8101a558                ethertab
- COMMON         0x8101a690       0x8c binaries/rdsinit.o
-                0x8101a690                rdstab
- COMMON         0x8101a71c    0x19000 binaries/raminit.o
-                0x8101a71c                Ram
- COMMON         0x8103371c      0xf00 binaries/lflinit.o
-                0x8103371c                lfltab
- COMMON         0x8103461c      0x20c binaries/lfsinit.o
-                0x8103461c                Lf_data
- COMMON         0x81034828      0x5a0 binaries/rflinit.o
-                0x81034828                rfltab
- COMMON         0x81034dc8       0x18 binaries/rfsinit.o
-                0x81034dc8                Rf_data
- COMMON         0x81034de0      0x140 binaries/arp.o
-                0x81034de0                arpcache
- COMMON         0x81034f20        0x4 binaries/dns.o
-                0x81034f20                nsaddr
- COMMON         0x81034f24      0x230 binaries/icmp.o
-                0x81034f24                icmptab
- COMMON         0x81035154       0x2c binaries/ip.o
-                0x81035154                ipoqueue
- COMMON         0x81035180       0xac binaries/net.o
-                0x81035180                netbufpool
-                0x81035184                NetData
- COMMON         0x8103522c      0x168 binaries/udp.o
-                0x8103522c                udptab
-                0x81035394                ebss = ABSOLUTE (.)
+                0x81017db4                memtail
+ COMMON         0x81017dbc        0x4 binaries/main.o
+                0x81017dbc                cpudelay
+ COMMON         0x81017dc0       0x58 binaries/mark.o
+                0x81017dc0                marks
+                0x81017e10                nmarks
+                0x81017e14                mkmutex
+ COMMON         0x81017e18        0x8 binaries/meminit.o
+                0x81017e18                minheap
+                0x81017e1c                maxheap
+ COMMON         0x81017e20      0x2d8 binaries/ptinit.o
+                0x81017e20                porttab
+                0x810180f0                ptnextid
+                0x810180f4                ptfree
+ COMMON         0x810180f8      0x980 binaries/queue.o
+                0x810180f8                queuetab
+ COMMON         0x81018a78        0x2 binaries/ready.o
+                0x81018a78                readylist
+ *fill*         0x81018a7a        0x2 
+ COMMON         0x81018a7c        0x8 binaries/resched.o
+                0x81018a7c                Defer
+ COMMON         0x81018a84      0x10c binaries/ttyinit.o
+                0x81018a84                ttytab
+ COMMON         0x81018b90     0x19a4 binaries/naminit.o
+                0x81018b90                nnames
+                0x81018b94                nametab
+ COMMON         0x8101a534      0x154 binaries/ethinit.o
+                0x8101a534                eth_a_regs
+                0x8101a550                ethertab
+ COMMON         0x8101a688       0x8c binaries/rdsinit.o
+                0x8101a688                rdstab
+ COMMON         0x8101a714    0x19000 binaries/raminit.o
+                0x8101a714                Ram
+ COMMON         0x81033714      0xf00 binaries/lflinit.o
+                0x81033714                lfltab
+ COMMON         0x81034614      0x20c binaries/lfsinit.o
+                0x81034614                Lf_data
+ COMMON         0x81034820      0x5a0 binaries/rflinit.o
+                0x81034820                rfltab
+ COMMON         0x81034dc0       0x18 binaries/rfsinit.o
+                0x81034dc0                Rf_data
+ COMMON         0x81034dd8      0x140 binaries/arp.o
+                0x81034dd8                arpcache
+ COMMON         0x81034f18        0x4 binaries/dns.o
+                0x81034f18                nsaddr
+ COMMON         0x81034f1c      0x230 binaries/icmp.o
+                0x81034f1c                icmptab
+ COMMON         0x8103514c       0x2c binaries/ip.o
+                0x8103514c                ipoqueue
+ COMMON         0x81035178       0xac binaries/net.o
+                0x81035178                netbufpool
+                0x8103517c                NetData
+ COMMON         0x81035224      0x168 binaries/udp.o
+                0x81035224                udptab
+                0x8103538c                ebss = ABSOLUTE (.)
                 0x81036000                . = ALIGN (0x1000)
- *fill*         0x81035394      0xc6c 
+ *fill*         0x8103538c      0xc74 
  */()
                 0x81036000                end = ABSOLUTE (.)
                 0x81036000                _end = ABSOLUTE (.)
