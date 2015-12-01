@@ -29,9 +29,16 @@ char  	*getstk(
 	fitsprev = NULL;  /* Just to avoid a compiler warning */
 
 	while (curr != NULL) {			/* Scan entire list	*/
-		if (curr->mlength >= nbytes) {	/* Record block address	*/
+		/* jteague6 - for best fit, we want to not only make sure the block
+         * fitst, but we want to also make sure it is the first fitting block
+         * that has been found, or that it is smaller than the current
+         * fitting block. */
+        if (curr->mlength >= nbytes &&
+                ( read == 0 ||
+                  curr->mlength < fits->mlength )) {	/* Record block address	*/
 			fits = curr;		/*   when request fits	*/
 			fitsprev = prev;
+            read = 1;           /* To prevent erroneous positives */
 		}
 		prev = curr;
 		curr = curr->mnext;
