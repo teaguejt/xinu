@@ -13,6 +13,7 @@ char  	*getstk(
 	intmask	mask;			/* Saved interrupt mask		*/
 	struct	memblk	*prev, *curr;	/* Walk through memory list	*/
 	struct	memblk	*fits, *fitsprev; /* Record block that fits	*/
+    uint32 read = 0;        /* jteague6 - for best-fit finding */
 
 	mask = disable();
 	if (nbytes == 0) {
