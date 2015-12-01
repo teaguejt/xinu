@@ -56,5 +56,5 @@ char  	*getstk(
 	}
 	memlist.mlength -= nbytes;
 	restore(mask);
-	return (char *)((uint32) fits + nbytes - sizeof(uint32));
+	return (char *)((uint32) fits + nbytes - 2 * sizeof(uint32));
 }

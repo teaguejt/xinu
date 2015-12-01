@@ -61,7 +61,7 @@ void	nulluser()
 	kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
 	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
 	    kprintf("           [0x%08X to 0x%08X]\r\n",
-		(uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
+		(uint32)memptr, ((uint32)memptr) + memptr->mlength - 2);
 	}
 
 	kprintf("%10d bytes of Xinu code.\n",

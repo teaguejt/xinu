@@ -22,7 +22,9 @@ void	meminit(void)
 
 	memlist.mnext = (struct memblk *)minheap;
 	memptr = memlist.mnext;
+    memptr = memtail.mprev;
 
 	memptr->mnext = (struct memblk *)NULL;
+    memptr->mprev = (struct memblk *)NULL;
 	memptr->mlength = (uint32)maxheap - (uint32)minheap;
 }
