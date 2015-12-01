@@ -22,9 +22,12 @@ void	meminit(void)
 
 	memlist.mnext = (struct memblk *)minheap;
 	memptr = memlist.mnext;
+    kprintf( "About to set memtail\n\n" );
     memptr = memtail.mprev;
+    kprintf( "Memtail set!\n\n" );
 
 	memptr->mnext = (struct memblk *)NULL;
     memptr->mprev = (struct memblk *)NULL;
 	memptr->mlength = (uint32)maxheap - (uint32)minheap;
+    kprintf( "Returning from meminit\n\n" );
 }
