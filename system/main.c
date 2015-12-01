@@ -35,7 +35,7 @@ process	main(void)
 	//kprintf("Counter value: %d\n", gcounter);
 
 	//DELAY(5000000);
-	netstart();
+	//netstart();
 
 	kprintf("\n...creating a shell\n");
 	recvclr();
